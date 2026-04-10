@@ -35,9 +35,19 @@
 
 | 技术 | 版本 | 用途 | 选择理由 |
 |------|------|------|---------|
-| **Next.js** | 14.x | React 全栈框架 | App Router、SSR/SSG、Image Optimization |
-| **React** | 18.x | UI 库 | 生态丰富、Concurrent Features |
-| **TypeScript** | 5.x | 类型系统 | 编译时检查、IDE 支持、可维护性 |
+| **Next.js** | 16.x (最新) | React 全栈框架 | App Router、Turbopack、React 19支持 |
+| **React** | 19.x (最新) | UI 库 | Concurrent Features、Server Components |
+| **TypeScript** | 6.x (最新) | 类型系统 | 编译时检查、IDE 支持、可维护性 |
+
+**版本说明**:
+```
+Next.js 版本演进:
+├── Next.js 14 (2023) - App Router 正式发布
+├── Next.js 15 (2024) - Turbopack 稳定、React 19 支持
+└── Next.js 16 (当前) - 16.2.3 最新稳定版
+
+结论: 使用最新稳定版 16.2.3，获取最新功能和性能优化
+```
 
 **对比其他方案**:
 ```
@@ -590,7 +600,7 @@ Grafana Dashboards:
 
 | 类别 | 方案A (推荐) | 方案B | 方案C |
 |------|-------------|-------|-------|
-| 框架 | **Next.js 14** | Nuxt 3 | Remix |
+| **框架** | **Next.js 16** | Nuxt 3 | Remix |
 | 样式 | **Tailwind** | CSS-in-JS | Bootstrap |
 | 组件 | **shadcn/ui** | Ant Design | Chakra |
 | 状态 | **Zustand** | Redux | MobX |
@@ -670,7 +680,7 @@ Grafana Dashboards:
 2. **PostgreSQL 做主库** - 2024 年最佳关系型数据库
 3. **Redis 做缓存** - 性能王者
 4. **Kubernetes 做编排** - 云原生标准
-5. **Next.js 做前端** - React 生态最优解
+5. **Next.js 做前端** - React 生态最优解 (现在16.x)
 6. **Kafka 做消息队列** - 高吞吐首选
 
 ### 可以根据团队调整 ⚠️
@@ -697,10 +707,10 @@ Grafana Dashboards:
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  【前端】                    【后端】                  【数据】   │
-│  Next.js 14        ◄──────►  Go + Gin        ◄────► PostgreSQL │
-│  React 18                    Microservices            Redis     │
-│  TypeScript 5                gRPC                     Kafka     │
-│  Tailwind CSS                JWT/OAuth2               MinIO     │
+│  Next.js 16        ◄──────►  Go + Gin        ◄────► PostgreSQL │
+│  React 19                    Microservices            Redis     │
+│  TypeScript 6                gRPC                     Kafka     │
+│  Tailwind 4                 JWT/OAuth2               MinIO     │
 │  shadcn/ui                   OpenTelemetry                      │
 │  Zustand                                                    │
 │  TanStack Query                                             │
