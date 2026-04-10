@@ -3,10 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Enable experimental features for Next.js 16
   experimental: {
-    // Enable Turbopack
+    // Turbopack configuration
     turbo: {
       resolveAlias: {
-        '@': './app',
+        '@': '.',
         '@components': './components',
         '@lib': './lib',
         '@hooks': './hooks',
@@ -14,6 +14,20 @@ const nextConfig: NextConfig = {
         '@types': './types',
       },
     },
+  },
+  
+  // Path aliases (for tsconfig.json paths to work)
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': '.',
+      '@components': './components',
+      '@lib': './lib',
+      '@hooks': './hooks',
+      '@stores': './stores',
+      '@types': './types',
+    };
+    return config;
   },
   
   // Image optimization
